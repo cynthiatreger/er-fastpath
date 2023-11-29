@@ -18,7 +18,7 @@ Enabling the [ExpressRoute FastPath](https://learn.microsoft.com/en-us/azure/exp
 
 This results in reduced latency and the ability to exceed the ExpressRoute Gateway maximum throughput limit of 10 Gbps.
 
-> Current constraints and limitations:
+Current constraints and limitations:
 - **Available only on Ultra Performance or ErGw3AZ**
 - [IP address limit*](https://learn.microsoft.com/en-us/azure/expressroute/about-fastpath#ip-address-limits)
 - Limited support of Private Link for ExpressRoute Direct circuits only, not supported at all on ExpresRoute partner circuits
@@ -34,7 +34,7 @@ In our documentation, we specify the following limits for the number of **FastPa
 | ExpressRoute Direct | 10 Gbps | **100k** |
 |ExpressRoute provider circuit | =< 10 Gbps| **25k** |
 
-When FastPath is enabled, this limit is the maximum number of Azure endpoints that will be configured to bypass the ExpressRoute Gateway. Whenever a new IP address is added or removed in the VNet environment, the FastPath IPs are automatically reprogrammed to reflect that change, keeping the FastPath IP list up to date.
+When FastPath is enabled, this limit is the maximum number of Azure endpoints in the VNet environment that will be configured to bypass the ExpressRoute Gateway. Whenever a new IP address is added or removed, the FastPath IPs are automatically reprogrammed to reflect that change, keeping the FastPath IP list up to date.
 
 > It is important to note that when calculating the limit for FastPath IPs, only endpoints with assigned private IP addresses within a subnet or VNet range are counted. The entire address range won't be included in the calculation of consumed IPs.
 
