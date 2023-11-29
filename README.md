@@ -18,7 +18,7 @@ Enabling the [ExpressRoute FastPath](https://learn.microsoft.com/en-us/azure/exp
 
 This results in reduced latency and the ability to exceed the ExpressRoute Gateway maximum throughput limit of 10 Gbps.
 
-Current constraints and limitations:
+Current constraints and limitations (as of November 2023):
 - **Available only on Ultra Performance or ErGw3AZ**
 - [IP address limit*](https://learn.microsoft.com/en-us/azure/expressroute/about-fastpath#ip-address-limits)
 - Limited support of Private Link for ExpressRoute Direct circuits only, not supported at all on ExpresRoute partner circuits
