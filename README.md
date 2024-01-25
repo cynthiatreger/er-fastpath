@@ -24,6 +24,8 @@ Current constraints and limitations (as of November 2023):
 - Limited support of Private Link for ExpressRoute Direct circuits only, not supported at all on ExpresRoute partner circuits
 - FastPath support for [UDRs](https://learn.microsoft.com/en-us/azure/expressroute/about-fastpath#user-defined-routes-udrs) on the Gateway subnet and for [VNet peering](https://learn.microsoft.com/en-us/azure/expressroute/about-fastpath#virtual-network-vnet-peering) is still in preview and available for ExpressDirect circuits only
 
+> ExpressRoute FastPath is configured [per connection](https://learn.microsoft.com/en-us/azure/expressroute/expressroute-howto-linkvnet-arm#configure-expressroute-fastpath).
+
 ## *About the FastPath IP address limit
 
 In our documentation, we specify the following limits for the number of **FastPath IPs**: 
