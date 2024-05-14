@@ -24,7 +24,7 @@ Current constraints and limitations (as of November 2023):
 - Limited support of Private Link for ExpressRoute Direct circuits only, not supported at all on ExpresRoute partner circuits
 - FastPath support for [UDRs](https://learn.microsoft.com/en-us/azure/expressroute/about-fastpath#user-defined-routes-udrs) on the Gateway subnet and for [VNet peering](https://learn.microsoft.com/en-us/azure/expressroute/about-fastpath#virtual-network-vnet-peering) is still in preview and available for ExpressDirect circuits only
 
-> ExpressRoute FastPath is configured [per connection](https://learn.microsoft.com/en-us/azure/expressroute/expressroute-howto-linkvnet-arm#configure-expressroute-fastpath).
+> ExpressRoute FastPath is configured [**per connection**](https://learn.microsoft.com/en-us/azure/expressroute/expressroute-howto-linkvnet-arm#configure-expressroute-fastpath).
 
 ## *About the FastPath IP address limit
 
@@ -36,7 +36,9 @@ In our documentation, we specify the following limits for the number of **FastPa
 | ExpressRoute Direct | 10 Gbps | **100k** |
 |ExpressRoute provider circuit | =< 10 Gbps| **25k** |
 
-When FastPath is enabled, this limit is the maximum number of Azure endpoints in the VNet environment that will be configured to bypass the ExpressRoute Gateway. Whenever a new IP address is added or removed, the FastPath IPs are automatically reprogrammed to reflect that change, keeping the FastPath IP list up to date.
+When FastPath is enabled, this limit is the maximum number of Azure endpoints in the VNet environment that will be configured to bypass the ExpressRoute Gateway. Whenever a new IP address is added or removed, the FastPath IPs are automatically reprogrammed to reflect that change, keeping the FastPath IP list up to date. 
+
+The limit is on customer private IPs, a VM with 3 NICs requires 3 FastPath routes counting towards the limit (reminder: FastPath is configured per connection, not per circuit).
 
 > It is important to note that when calculating the limit for FastPath IPs, only endpoints with assigned private IP addresses within a subnet or VNet range are counted. The entire address range won't be included in the calculation of consumed IPs.
 
