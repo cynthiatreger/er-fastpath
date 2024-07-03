@@ -1,5 +1,7 @@
 # ExpressRoute datapath, FastPath and FastPath IP limits 
 
+This article is co-authored by Microsoft colleague [David Santiago](https://github.com/davidsntg). The content is now also available and updated on the [Microsoft Tech Community blog](https://techcommunity.microsoft.com/t5/azure-networking-blog/expressroute-fastpath-for-udrs-and-vnet-peering/ba-p/4171115), go and check it out!
+
 ## Default behavior
 
 The data flow between On-Prem and Azure using ExpressRoute is asymmetric by design. 
